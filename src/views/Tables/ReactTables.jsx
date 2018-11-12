@@ -22,7 +22,13 @@ class ReactTables extends Component {
     // You can set the `loading` prop of the table to true to use the built-in one or show you're own loading bar if you want.
     this.setState({ loading: true })
     // Request the data however you want.  Here, we'll use our mocked service we created earlier
-    axios.get('https://jsonplaceholder.typicode.com/users?pageSize=' + state.pageSize + '&page=' + state.page + '&sorted=' + state.sorted + '&filtered=' + state.filtered)
+    axios.post('https://7dsd5mf6g8.execute-api.eu-central-1.amazonaws.com/inhouse/enrollments',
+      {
+        pageSize: state.pageSize,
+        page: state.page,
+        sorted: state.sorted,
+        filtered: state.filtered
+      })
       .then(res => {
       // Now just get the rows of data to your React Table (and update anything else like total pages or loading)
         this.setState({

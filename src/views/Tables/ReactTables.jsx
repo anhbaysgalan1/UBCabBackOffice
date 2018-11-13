@@ -27,13 +27,20 @@ class ReactTables extends Component {
         pageSize: state.pageSize,
         page: state.page,
         sorted: state.sorted,
-        filtered: state.filtered
+        filtered: state.filtered,
+        isRegistered: false
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZTZkMzI1YjY4ODkyMGE4MGIwNDc2ZCIsInN0YW1wIjoxNTQyMDI2NjY0MTc0LCJ0eXBlIjoib3BlcmF0b3IiLCJpYXQiOjE1NDIwMjY2NjQsImV4cCI6MTU0MjA2OTg2NH0.v8XzVJJoYIwyIspC0KdC6W0aRzFzWO66cXs6PqrD-Xc'
+        }
       })
       .then(res => {
       // Now just get the rows of data to your React Table (and update anything else like total pages or loading)
         this.setState({
-          data: res.data,
-          pages: 10,
+          data: res.data.itemsList,
+          pages: res.data.pageCount,
           loading: false
         })
       })
@@ -53,23 +60,19 @@ class ReactTables extends Component {
                     columns={[
                       {
                         Header: 'Name',
-                        accessor: 'name',
-                        id: 'name'
+                        accessor: 'name'
                       },
                       {
-                        Header: 'Username',
-                        accessor: 'username',
-                        id: 'username'
+                        Header: 'Service',
+                        accessor: 'servicegroup'
                       },
                       {
-                        Header: 'Email',
-                        accessor: 'email',
-                        id: 'email'
+                        Header: 'Agreement',
+                        accessor: 'agreement'
                       },
                       {
-                        Header: 'Phone',
-                        accessor: 'phone',
-                        id: 'phone'
+                        Header: 'Status',
+                        accessor: 'status'
                       },
                       {
                         Header: 'Actions',

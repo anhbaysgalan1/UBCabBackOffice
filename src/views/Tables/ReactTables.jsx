@@ -33,7 +33,7 @@ class ReactTables extends Component {
       {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZTZkMzI1YjY4ODkyMGE4MGIwNDc2ZCIsInN0YW1wIjoxNTQyMDgxNDkyNzgxLCJ0eXBlIjoib3BlcmF0b3IiLCJpYXQiOjE1NDIwODE0OTIsImV4cCI6MTU0MjEyNDY5Mn0.K9_F6IxNp-YuooGpNte0np8Jc4LWv5aTPzlrj4Y19bA'
+          'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZTZkMzI1YjY4ODkyMGE4MGIwNDc2ZCIsInN0YW1wIjoxNTQyMjcyMzIwOTk3LCJ0eXBlIjoib3BlcmF0b3IiLCJpYXQiOjE1NDIyNzIzMjAsImV4cCI6MTU0MjMxNTUyMH0.58qKmY5XeWLKBOYpR2Iw0MuKDF1owjR51GDZbjxR18g'
         }
       })
       .then(res => {
